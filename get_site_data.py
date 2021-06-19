@@ -13,8 +13,14 @@ soup = BeautifulSoup(people.text, "html.parser")
 divs = soup.find_all("div", {"class": "card_181czf1"})
 # imgs = soup.find_all("p")
 
+name_list = []
+
 for d in divs:
-    print(d)
+    for name in d.find_all("h4"):
+        n = name.text
+    for title in d.find_all("p"):
+        t = title.text
+    name_list.append((n, t))
 
 
-print("done now")
+print(len(name_list), "\n", name_list)
