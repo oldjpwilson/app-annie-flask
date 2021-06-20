@@ -1,2 +1,2 @@
 # Ignore the db 
-*.db
+#*.db  - dont do this for real, just a quick attempt to get onto heroku
