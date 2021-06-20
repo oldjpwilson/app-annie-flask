@@ -13,14 +13,20 @@ soup = BeautifulSoup(people.text, "html.parser")
 divs = soup.find_all("div", {"class": "card_181czf1"})
 # imgs = soup.find_all("p")
 
-name_list = []
 
-for d in divs:
-    for name in d.find_all("h4"):
-        n = name.text
-    for title in d.find_all("p"):
-        t = title.text
-    name_list.append((n, t))
+def get_people():
+    leadership = []
+    for d in divs:
+        person = {}
+        for name in d.find_all("h4"):
+            person["name"] = name.text
+        for title in d.find_all("p"):
+            person["title"] = title.text
+        for i in d.find_all("img"):
+            person["profile-image"] = i["src"]
+        leadership.append(person)
+    return leadership
 
 
-print(len(name_list), "\n", name_list)
+# for person in leadership:
+#     print(person, "\n")
