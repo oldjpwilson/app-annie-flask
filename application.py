@@ -4,6 +4,7 @@ from get_site_data import get_people
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
+app.config["JSONIFY_PRETTYPRINT_REGULAR"] = True
 
 db = SQLAlchemy(app)
 
