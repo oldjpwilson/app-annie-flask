@@ -21,7 +21,12 @@ class Person(db.Model):
 #     print(p["name"], "\n")
 
 
-@app.route("/hi")
+@app.route("/people/json")
 def howdy():
     a = get_people()
     return "Does this work??? '\n' {}".format(a)
+
+
+@app.route("/mich")
+def hi():
+    return "Howdy Michelley"

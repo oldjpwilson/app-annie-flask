@@ -23,7 +23,7 @@ def get_people():
         for title in d.find_all("p"):
             person["title"] = title.text
         for i in d.find_all("img"):
-            person["profile-image"] = i["src"]
+            person["profile-image"] = i["src"][2:]
         leadership.append(person)
     return leadership
 
