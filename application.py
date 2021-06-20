@@ -17,13 +17,14 @@ class Person(db.Model):
         return f"{self.name} -- {self.title}"
 
 
+a = get_people()  # move this outside the function
+
 # for p in a:
 #     print(p["name"], "\n")
 
 
 @app.route("/people/json")
 def howdy():
-    a = get_people()
     return "Does this work??? '\n' {}".format(a)
 
 
