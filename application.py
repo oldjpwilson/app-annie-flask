@@ -36,7 +36,7 @@ for p in people:
 
 @app.route("/")
 def welcome():
-    return "Welcome, please head to https://github.com/oldjpwilson/app-annie-flask or type in a url, eg: people/json, or person/<id>/json"
+    return "Welcome, please head to https://github.com/oldjpwilson/app-annie-flask or a url endpoint, eg: people/json, or person/3/json"
 
 
 @app.route("/people/json")
