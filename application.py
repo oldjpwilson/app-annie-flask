@@ -34,6 +34,11 @@ for p in people:
         print("adding")
 
 
+@app.route("/")
+def welcome():
+    return "Welcome, please head to https://github.com/oldjpwilson/app-annie-flask or type in a url, eg: people/json, or person/<id>/json"
+
+
 @app.route("/people/json")
 def get_people():
     people = Person.query.all()
